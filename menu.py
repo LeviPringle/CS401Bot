@@ -12,8 +12,8 @@ def menu(take_action):
     elif take_action == "solve":
         solve()
         return
-    elif take_action == "calliberate":
-        calliberate()
+    elif take_action == "calibrate":
+        calibrate()
         return
     elif take_action == "checkered":
         checkered()
@@ -42,8 +42,32 @@ def capture():
     x.show()
 
 def play():
-    pass
-def calliberate():
+    actionString = input().lower()
+    while actionString != "q":
+        for action in actionString:
+            match action:
+                case "u":
+                    #turn U
+                    pass
+                case "d":
+                    #turn D
+                    pass
+                case "l":
+                    #turn L
+                    pass
+                case "r":
+                    #turn R
+                    pass
+                case "f":
+                    #turn F
+                    pass
+                case "b":
+                    #turn B
+                    pass
+                case _:
+                    print("Invalid Turns")
+        actionString = input()
+def calibrate():
     pass
 def solve():
     pass
