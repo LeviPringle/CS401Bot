@@ -2,24 +2,30 @@ from PIL import Image
 import cv2 as cv
 
 def menu(take_action):
+    take_action = take_action.lower()
     if take_action == "capture":
         capture()
+        return
     elif take_action == "play":
         play()
+        return
     elif take_action == "solve":
         solve()
+        return
     elif take_action == "calliberate":
         calliberate()
+        return
     elif take_action == "checkered":
         checkered()
+        return
     else:
-        print("This command does not exist.")
+        return ("This command does not exist.")
 
 def capture():
     cam_port1 = 0
     cam_port2 = 1
 
-    cam1 = cv.VideoCapture()
+    cam1 = cv.VideoCapture(cam_port1)
     result, image1 = cam1.read()
     # releasing the camera is important for the second camera to be able to capture.
     cam1.release()
