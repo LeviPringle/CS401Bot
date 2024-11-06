@@ -1,2 +1,5 @@
 #ignore all .png files
 *.png
+
+#if working with Bryant's Code, use this dir to ignore
+bryantCode
