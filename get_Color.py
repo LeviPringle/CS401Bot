@@ -1,42 +1,29 @@
 def getColor(r,g,b):
     avg = (r + g + b)/3
-    if abs(r-avg) <= 20 and abs(g-avg) <= 20 and abs(b-avg) <= 20:
-        print('White')
+    if abs(r-avg) <= 20 and abs(g-avg) <= 20 and abs(b-avg) <= 20 and r >= 100:
+        return 'White'
+    elif abs(r-avg) <= 20 and abs(g-avg) <= 20 and abs(b-avg) <= 20 and r < 100:
+        return 'Black'
     elif g >= r and g >= b:
-        if b > 100:
-            print('Blue')
-        elif r >= 180:
-            print('Yellow')
+        if r >= 180:
+            return 'Yellow'
         else:
-            print('Green')
+            return 'Green'
     elif b >= r and b >= g:
         if r > 150 or g > 150:
-            print('White')
+            return 'White'
         else:
-            print('Blue')
+            return 'Blue'
     elif r >= g and r >= b:
         d = r - g
         e = g - b
         if abs(d) <= 50:
-            print('Yellow')
-        elif b <= 40 and g <= 40:
-            print('Red')
+            return 'Yellow'
+        elif abs(e) <= 40:
+            return 'Red'
         else:
-            print('Orange')
-    else:
-        print('White')
+            return 'Orange'
+    
 
-q = 0
-while q != 1:
-    print('do you want to get color?(y-yes/q-quit)')
-    run = input()
-    if run == 'q':
-        q = 1
-    else:
-        
-        a = int(input('give me red value:'))
-        b = int(input('give me green value:'))
-        c = int(input('give me blue value:'))
-        getColor(a, b, c) 
 
         
