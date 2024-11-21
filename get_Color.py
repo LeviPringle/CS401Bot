@@ -1,22 +1,30 @@
-
 def getColor(r,g,b):
     avg = (r + g + b)/3
-    
-    if abs(r-avg) < 30 and abs(g-avg) < 30 and abs(b-avg) < 30:
+    if abs(r-avg) <= 20 and abs(g-avg) <= 20 and abs(b-avg) <= 20:
         print('White')
-    elif g > r and g > b:
-        print('Green')
-    elif b > r and b > g:
-        print('Blue')
-    elif r > g and r > b:
+    elif g >= r and g >= b:
+        if b > 100:
+            print('Blue')
+        elif r >= 180:
+            print('Yellow')
+        else:
+            print('Green')
+    elif b >= r and b >= g:
+        if r > 150 or g > 150:
+            print('White')
+        else:
+            print('Blue')
+    elif r >= g and r >= b:
         d = r - g
         e = g - b
-        if abs(d) < 30:
+        if abs(d) <= 50:
             print('Yellow')
-        elif abs(e) < 15:
+        elif b <= 40 and g <= 40:
             print('Red')
         else:
             print('Orange')
+    else:
+        print('White')
 
 q = 0
 while q != 1:
